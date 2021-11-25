@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let todo of todos$ | async as todos">
+    <a [routerLink]="['/todo/detail']" [queryParams]="{id: todo.id}">
+      {{ todo.date | date: 'yyyy-MM-dd' }} - {{ todo.description }}
+      <span *ngIf="todo.finished">(완료)</span>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,7 @@
+<div *ngIf="todo$ | async as todo">
+  {{ todo.date | date: 'yyyy-MM-dd' }} - {{ todo.description }}
+  <span *ngIf="todo.finished">(완료)</span>
+  <button [routerLink]="['/todo/modify']" [queryParams]="{id: todo.id}">수정</button>
+</div>
+
+<button [routerLink]="['/todo/list']">목록으로</button>

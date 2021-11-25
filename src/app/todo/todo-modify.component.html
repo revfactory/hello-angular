@@ -1,0 +1,29 @@
+<div *ngIf="todo$ | async as todo">
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()" >
+    <div>
+      <label>
+        ID : {{ todo.id }}
+      </label>
+    </div>
+
+    <div>
+      <label for="description">
+        Description
+      </label>
+      <input id="description" type="text" formControlName="description">
+    </div>
+
+    <div>
+      <label for="finished">
+        완료
+      </label>
+      <input id="finished" type="checkbox" formControlName="finished">
+    </div>
+
+    <button type="button" (click)="moveToDetail()">취소</button>
+    <button type="submit">저장</button>
+
+  </form>
+
+</div>
+
