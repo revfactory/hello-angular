@@ -110,6 +110,7 @@ export class CustomerComponent implements OnInit {
   save(): void {
     console.log(this.customerForm);
     console.log('Saved: ' + JSON.stringify(this.customerForm.value));
+    alert('Saved: ' + JSON.stringify(this.customerForm.value));
   }
 
   setMessage(c: AbstractControl): void {
